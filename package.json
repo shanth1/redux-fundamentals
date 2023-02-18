@@ -1,0 +1,11 @@
+{
+  "name": "redux-fundamentals",
+  "version": "1.0.0",
+  "description": "redux, react-redux, redux toolkit tutorials",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shanth1",
+  "license": "ISC"
+}

@@ -5,14 +5,14 @@ import {
 } from "./exampleAddons/enhancers";
 import filtersReducer from "./features/filters/filtersSlice";
 import todosReducer from "./features/todos/todosSlice";
-import { print1, print2, print3 } from "./exampleAddons/midleware";
+import { asyncCustomMiddleware, print123 } from "./exampleAddons/middleware";
 
 const store = configureStore({
     reducer: {
         todos: todosReducer,
         filters: filtersReducer,
     },
-    middleware: [print1, print2, print3],
+    middleware: [print123, asyncCustomMiddleware],
     enhancers: [sayHiOnDispatch, includeMeaningOfLife],
 });
 

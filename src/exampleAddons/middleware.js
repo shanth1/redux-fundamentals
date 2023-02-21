@@ -12,17 +12,17 @@ export function exampleMiddleware(storeAPI) {
     };
 }
 
-export const print1 = (storeAPI) => (next) => (action) => {
-    console.log("1");
+export const print123 = (storeAPI) => (next) => (action) => {
+    console.log("123");
     return next(action);
 };
 
-export const print2 = (storeAPI) => (next) => (action) => {
-    console.log("2");
-    return next(action);
-};
-
-export const print3 = (storeAPI) => (next) => (action) => {
-    console.log("3");
+export const asyncCustomMiddleware = (storeAPI) => (next) => (action) => {
+    console.log("dispatching", action.type);
+    if (action.type === "todos/todoAdded") {
+        setTimeout(() => {
+            console.log("Added a new todo: ", action.payload);
+        }, 1000);
+    }
     return next(action);
 };

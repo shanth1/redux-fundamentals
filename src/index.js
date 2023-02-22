@@ -6,6 +6,7 @@ import App from "./App";
 import "./api/server";
 
 import store from "./store";
+import { Provider } from "react-redux";
 
 // Log the initial state
 console.log("Initial state: ", store.getState());
@@ -43,6 +44,8 @@ store.dispatch({ type: "todos/todoAdded", payload: "Try creating a store" });
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-        <App />
+        <Provider store={store}>
+            <App />
+        </Provider>
     </React.StrictMode>,
 );

@@ -1,10 +1,10 @@
-export const sayHiOnDispatch = (createStore) => {
-    return (rootReducer, preloadedState, enhancers) => {
-        const store = createStore(rootReducer, preloadedState, enhancers);
+export const sayHiOnDispatch = (configureStore) => {
+    return (reducer, preloadedState, enhancers) => {
+        const store = configureStore(reducer, preloadedState, enhancers);
 
         function newDispatch(action) {
             const result = store.dispatch(action);
-            console.log("Hi!");
+            console.log("Hi!!");
             return result;
         }
 
@@ -12,9 +12,9 @@ export const sayHiOnDispatch = (createStore) => {
     };
 };
 
-export const includeMeaningOfLife = (createStore) => {
-    return (rootReducer, preloadedState, enhancers) => {
-        const store = createStore(rootReducer, preloadedState, enhancers);
+export const includeMeaningOfLife = (configureStore) => {
+    return (reducer, preloadedState, enhancers) => {
+        const store = configureStore(reducer, preloadedState, enhancers);
 
         function newGetState() {
             return {
